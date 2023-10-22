@@ -21,11 +21,11 @@ logging.basicConfig(
     ]
 )
 
-logger = logging.getLogger("LOGGIN HAS STARTED")
+# logger = logging.getLogger("LOGGIN HAS STARTED")
 
 if __name__ == '__main__':
     logging.info("LOGGING HAS STARTED")
-    
+
 
 #<<<<<<<<<<<<<<<<<< CUSTOM EXCEPTION HANDLING >>>>>>>>>>>>>>>>>>>>>>>
 
