@@ -74,8 +74,25 @@ def load_json(path: Path) -> ConfigBox:
         Returns:
             ConfigBox: data as class attributes insted of dict 
     '''
-    with open(path) as f:
-        content = json.load(path)
+    with open(path) as file:
+        content = json.load(file)
 
     logging.info(f'JSON FILE LOADED SUCCESSFULLY FROM THE PATH {path}')
     return ConfigBox(content)
+
+@ensure_annotations
+def get_size(path: Path) -> str:
+    '''
+    get size in KB
+
+    Args:
+        path (Path) : path of the file
+
+    Returns:
+        str: size in KB
+    '''
+
+    size_in_kb = round(os.path.getsize(path) / 1024)
+    return f'~ {size_in_kb} KB'
+
+
