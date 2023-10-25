@@ -1,15 +1,13 @@
 import sys
-from src.cnnClassifier import logging,CustomException
-from cnnClassifier.utils.common import get_size,hello
-from pathlib import Path
+from cnnClassifier import logging,CustomException
+from cnnClassifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 
-print(get_size(Path('research\\01_data_ingestion.ipynb')))
-print(hello())
+STAGE_NAME = 'DATA INGESTION STAGE'
 
-logging.info("TEST LOGIN")
-
-# try: 
-#     a = 1/0
-# except Exception as ex:
-#     logging.info("zero divisin exception ..........")
-#     raise CustomException(ex,sys)
+try:
+    logging.info(f'>>>>>>>>>>>>> STAGE {STAGE_NAME} STARTED <<<<<<<<<<<<<<<<<<<<')
+    data_ingestion = DataIngestionTrainingPipeline()
+    data_ingestion.main()                       # THERE IS A main METHOD IN THE DataIngestionTrainingPipeline 
+    logging.info(f'>>>>>>>>>>> STAGE {STAGE_NAME} COMPLETED <<<<<<<<<<<<<<<<<<<<')
+except Exception as e:
+    CustomException(e,sys)
