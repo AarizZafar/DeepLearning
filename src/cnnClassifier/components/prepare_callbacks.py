@@ -24,12 +24,12 @@ class PrepareCallback:
     @property
     def _create_ckpt_callbacks(self):
         return tf.keras.callbacks.ModelCheckpoint(
-            filepath = self.config.checkpoint_model_filepath,
+            filepath       = 'artifacts\prepare_callbacks\checkpoint_dir\model.h5',
             save_best_only = True
         )
 
     # ckpt - checkpoint
-    def get_tb_ckpt_callback(self):
+    def get_tb_ckpt_callbacks(self):
         return [
             self._create_tb_callbacks,
             self._create_ckpt_callbacks
