@@ -54,5 +54,6 @@ def predictRoute():
 
 if __name__ == "__main__":
     clApp = ClientApp() # CUSTOM CLASS DEFINED ELSEWHERE IN THE CODEBASE
-    app.run(host='0.0.0.0',port=8080)
+    # app.run(host='0.0.0.0',port=8080) # FOR LOCALHOST 
+    app.run(host = '0.0.0.0', port = 80)  # FOR AZURE
 
