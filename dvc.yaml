@@ -50,5 +50,4 @@ stages:
     metrics:
     - scores.json:
         cache: false
-        
 

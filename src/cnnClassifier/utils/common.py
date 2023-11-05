@@ -95,4 +95,12 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path) / 1024)
     return f'~ {size_in_kb} KB'
 
+# base64 is a method of encoding binary data, like image or file into text-base format, making it easy to transmit
+# this data as text over systems or protocols that can handle only textual data.
+def decodeImage(imagestring, filename):
+    imagedata = base64.b64decode(imagestring)
+    with open(filename , 'wb') as f:
+        f.write(imagedata)
+        f.close()
+
 
